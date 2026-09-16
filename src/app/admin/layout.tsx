@@ -13,7 +13,7 @@ function SupabaseNotConfigured() {
         </code>{" "}
         and{" "}
         <code className="rounded bg-neutral-100 px-1">
-          NEXT_PUBLIC_SUPABASE_ANON_KEY
+          NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
         </code>{" "}
         to <code className="rounded bg-neutral-100 px-1">.env.local</code>{" "}
         (see the setup instructions), then restart the app.
@@ -29,7 +29,7 @@ export default async function AdminLayout({
 }) {
   if (
     !process.env.NEXT_PUBLIC_SUPABASE_URL ||
-    !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    !process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
   ) {
     return <SupabaseNotConfigured />;
   }
