@@ -1,0 +1,148 @@
+/**
+ * Single source of truth for brand, contact, and legal facts that aren't
+ * meant to live in the database (policies, packages, FAQs, templates —
+ * those are owner-editable and belong in Supabase tables, per SPEC.md).
+ *
+ * Anything the owner hasn't confirmed yet is marked `confirmed: false`.
+ * UI code must check that flag and show a neutral placeholder or an
+ * "Owner to confirm" badge instead of guessing a value — never invent
+ * a business fact. See SPEC.md Section 1, rule 4 and Section 8.
+ */
+
+export interface OwnerValue<T> {
+  value: T;
+  confirmed: boolean;
+}
+
+function unconfirmed<T>(value: T): OwnerValue<T> {
+  return { value, confirmed: false };
+}
+
+export const business = {
+  name: "Godspeed Driving Tutorial Services",
+  shortName: "GSD",
+  tagline: "Confidence starts here.",
+  enrollmentHeadline:
+    "Patient Instructors. Real Confidence. Roads You're Ready For.",
+
+  location: {
+    city: "Quezon City",
+    region: "Metro Manila",
+    country: "Philippines",
+  },
+
+  timezone: "Asia/Manila",
+  currency: "PHP",
+
+  colors: {
+    blue: "#1A4FA0",
+    red: "#D0191B",
+    yellow: "#F7C948",
+    background: "#FDFBF5",
+  },
+
+  fonts: unconfirmed({
+    heading: "Oswald",
+    body: "Barlow",
+  }),
+
+  positioning: {
+    betweenText:
+      "GSD is the professional middle ground between big driving schools (technical, one-size-fits-all, rotating instructors) and freelance private instructors (flexible but unstructured).",
+    pillars: [
+      "One dedicated instructor per student for the whole package",
+      "Personalized pace, adapted to each student's strengths and weaknesses",
+      "Attitude as well as skill: confident, capable, responsible drivers",
+    ],
+  },
+
+  audiences: [
+    "Nervous beginners",
+    "Late learners",
+    "Students burned by aggressive instructors",
+    "Parents enrolling themselves or their children",
+    "Busy professionals",
+    "People returning to driving after a long break",
+  ],
+
+  legal: {
+    dtiRegisteredOnly: true,
+    birRegistered: false,
+    lguRegistered: false,
+    ltoAccredited: false,
+    issuesTdcPdc: false,
+    internalStandards: ["GSD Approved", "Godspeed-Certified"],
+    footerRegistrationText: unconfirmed(
+      "DTI Registered Business Name (registration number to be added).",
+    ),
+    retiredPhrases: ["Wag ka matuto sa mali"],
+  },
+
+  contact: {
+    messengerPageHandle: unconfirmed(""), // used to build m.me/<handle>
+    phone: unconfirmed(""),
+    email: unconfirmed(""),
+    viber: unconfirmed(""),
+  },
+
+  domain: unconfirmed(""),
+
+  instructors: {
+    unitA: {
+      transmission: "A/T" as const,
+      displayName: unconfirmed("GSD Instructor (A/T)"),
+      yearsExperience: 26,
+      vehicleLabel: "Borrowed automatic vehicle",
+      vehicleOwned: false,
+      instructorDayRate: 1500,
+      vehicleDayRate: 1500,
+    },
+    unitM: {
+      transmission: "M/T" as const,
+      displayName: unconfirmed("GSD Instructor (M/T)"),
+      yearsExperience: 5,
+      vehicleLabel: "GSD-owned manual vehicle",
+      vehicleOwned: true,
+      instructorDayRate: 2000,
+      vehicleDayRate: 0, // fuel/upkeep tracked manually as expenses, not a fixed day rate
+    },
+  },
+
+  language: unconfirmed<"english" | "english-taglish">("english"),
+
+  meetingPoints: unconfirmed<string[]>([]),
+
+  waitlistPriorityRule: unconfirmed(
+    "VIP and URR students can see and book slots 3 days before other students.",
+  ),
+
+  packageValidityDays: 60,
+  defaultHoldHours: 24,
+  utilizationAlertThreshold: 0.85,
+  followUpDaysAfterCreation: [1, 3, 7],
+} as const;
+
+/**
+ * Flat list of every unconfirmed owner decision, for the admin "Setup"
+ * checklist and for badges on individual fields. Kept in one place so
+ * M1's admin shell can show a single "N things need your input" count.
+ */
+export const ownerTodos = [
+  "Confirm fonts (Oswald / Barlow) or provide alternatives",
+  "Confirm footer DTI registration wording",
+  "Messenger Page handle (for m.me link) and phone/email/Viber contact details",
+  "Domain name",
+  "Instructor display names, short bios, and photos (Unit A and Unit M)",
+  "Website language: English only, or English with Taglish",
+  "Meeting points or pickup zones in Quezon City, and any pickup fee",
+  "Confirm VIP/URR priority booking rule",
+  "Package tier display order and mixed weekday/weekend rule",
+  "Teaching days and hours per unit",
+  "Payment methods and account details (GCash name/number, bank)",
+  "Deposit %, reschedule fees, package validity, refund rule",
+  "Whether instructors/car owner are paid on late cancellations or no-shows",
+  "Whether permit-less students can do anything besides waitlist",
+  "Final FAQ answers and message templates",
+] as const;
+
+export type Business = typeof business;
