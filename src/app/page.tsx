@@ -11,12 +11,14 @@ import { Testimonials } from "@/components/marketing/testimonials";
 import { Policies } from "@/components/marketing/policies";
 import { Faq } from "@/components/marketing/faq";
 import { Footer } from "@/components/marketing/footer";
+import { BrandStripes } from "@/components/marketing/brand-stripes";
 
 export default function Home() {
   return (
     <main>
       <SiteHeader />
       <Hero />
+      <BrandStripes />
       <WhyGsd />
       <WhoItsFor />
       <Packages />
@@ -24,6 +26,7 @@ export default function Home() {
       <HowItWorks />
       <Requirements />
       <Coaches />
+      <BrandStripes />
       <Testimonials />
       <Policies />
       <Faq />

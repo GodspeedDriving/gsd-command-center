@@ -24,7 +24,7 @@ export function Requirements() {
           {business.meetingPoints.confirmed &&
             business.meetingPoints.value.length > 0 && (
               <p className="mt-4 text-sm text-neutral-700">
-                <strong>Where we meet:</strong>{" "}
+                <strong>Meet-up point / Training Area:</strong>{" "}
                 {business.meetingPoints.value.join(" / ")}
               </p>
             )}

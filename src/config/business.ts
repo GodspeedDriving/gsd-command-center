@@ -86,7 +86,13 @@ export const business = {
       confirmed: true,
     },
     messengerPageHandle: unconfirmed(""), // used to build m.me/<handle>
-    phone: { value: "0906 433 3182", confirmed: true },
+    phones: {
+      value: [
+        { label: "Globe", number: "0906 433 3182" },
+        { label: "Landline", number: "(02) 8724 6803" },
+      ],
+      confirmed: true,
+    },
     email: { value: "godspeeddrivingph@gmail.com", confirmed: true },
     viber: unconfirmed(""),
   },

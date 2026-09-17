@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { BrandStripes } from "@/components/marketing/brand-stripes";
@@ -5,7 +6,11 @@ import { business } from "@/config/business";
 
 export function Footer() {
   const contactLines = [
-    business.contact.phone.confirmed && business.contact.phone.value,
+    ...(business.contact.phones.confirmed
+      ? business.contact.phones.value.map(
+          (p) => `${p.number} (${p.label})`,
+        )
+      : []),
     business.contact.email.confirmed && business.contact.email.value,
     business.contact.viber.confirmed && `Viber: ${business.contact.viber.value}`,
   ].filter(Boolean) as string[];
@@ -14,9 +19,13 @@ export function Footer() {
     <footer className="border-t border-neutral-200 bg-white">
       <BrandStripes />
       <Container className="flex flex-col items-center gap-4 py-10 text-center">
-        <p className="font-heading text-lg font-bold text-brand-blue">
-          {business.shortName}
-        </p>
+        <Image
+          src="/BRAND/logo-mark.png"
+          alt={business.shortName}
+          width={56}
+          height={56}
+          className="h-14 w-14"
+        />
         <p className="max-w-md text-sm text-neutral-500">
           {business.legal.footerRegistrationText.value}
         </p>
