@@ -1,12 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
-import { BrandStripes } from "@/components/marketing/brand-stripes";
 import { business } from "@/config/business";
 
 export function SiteHeader() {
   return (
-    <header className="bg-white">
+    <header className="border-b border-neutral-200 bg-white">
       <Container className="flex items-center justify-center gap-2 py-5">
         <Link
           href="/"
@@ -33,7 +32,6 @@ export function SiteHeader() {
           />
         </Link>
       </Container>
-      <BrandStripes />
     </header>
   );
 }

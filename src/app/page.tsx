@@ -18,7 +18,6 @@ export default function Home() {
     <main>
       <SiteHeader />
       <Hero />
-      <BrandStripes />
       <WhyGsd />
       <WhoItsFor />
       <Packages />
