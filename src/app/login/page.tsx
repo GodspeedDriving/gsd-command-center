@@ -1,9 +1,24 @@
 "use client";
 
-import { useActionState } from "react";
+import { Suspense, useActionState } from "react";
+import { useSearchParams } from "next/navigation";
 import { sendMagicLink, type SendMagicLinkResult } from "./actions";
 
 const initialState: SendMagicLinkResult | null = null;
+
+function ExpiredLinkNotice() {
+  const searchParams = useSearchParams();
+  const linkExpired = searchParams.get("error") === "link_expired";
+
+  if (!linkExpired) return null;
+
+  return (
+    <p className="mb-4 rounded-lg bg-brand-yellow/20 px-3 py-2 text-sm text-neutral-800">
+      That link already expired or was already used. Please request a new
+      one below.
+    </p>
+  );
+}
 
 export default function LoginPage() {
   const [state, formAction, pending] = useActionState(
@@ -21,6 +36,12 @@ export default function LoginPage() {
           Enter your email and we&apos;ll send you a link to log in. No
           password needed.
         </p>
+
+        {!state && (
+          <Suspense fallback={null}>
+            <ExpiredLinkNotice />
+          </Suspense>
+        )}
 
         <form action={formAction} className="flex flex-col gap-3">
           <label htmlFor="email" className="text-sm font-medium">

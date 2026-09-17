@@ -25,11 +25,15 @@ export async function requireAdmin(): Promise<AdminUser> {
     redirect("/login");
   }
 
-  const { data: adminRow } = await supabase
+  const { data: adminRow, error } = await supabase
     .from("admins")
     .select("user_id, email, role")
     .eq("user_id", user.id)
     .maybeSingle();
+
+  if (error) {
+    console.error("requireAdmin: admins lookup failed:", error.message);
+  }
 
   if (!adminRow) {
     redirect("/unauthorized");
