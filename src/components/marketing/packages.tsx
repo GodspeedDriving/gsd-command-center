@@ -36,10 +36,10 @@ export async function Packages() {
                 key={pkg.code}
                 className="flex flex-col rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
               >
-                <h3 className="font-heading text-xl font-bold text-brand-blue">
+                <h3 className="font-heading text-center text-xl font-bold text-brand-blue">
                   {pkg.name}
                 </h3>
-                <p className="mt-1 text-sm text-neutral-500">
+                <p className="mt-1 text-center text-sm text-neutral-500">
                   {pkg.sessionsCount}{" "}
                   {pkg.sessionsCount === 1 ? "session" : "sessions"} &middot;{" "}
                   {pkg.hoursPerSession} hrs each
