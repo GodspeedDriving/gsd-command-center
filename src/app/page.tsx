@@ -1,23 +1,31 @@
-import Link from "next/link";
-import { business } from "@/config/business";
+import { Hero } from "@/components/marketing/hero";
+import { WhyGsd } from "@/components/marketing/why-gsd";
+import { WhoItsFor } from "@/components/marketing/who-its-for";
+import { Packages } from "@/components/marketing/packages";
+import { PackageRecommender } from "@/components/marketing/package-recommender";
+import { HowItWorks } from "@/components/marketing/how-it-works";
+import { Requirements } from "@/components/marketing/requirements";
+import { Instructors } from "@/components/marketing/instructors";
+import { Testimonials } from "@/components/marketing/testimonials";
+import { Policies } from "@/components/marketing/policies";
+import { Faq } from "@/components/marketing/faq";
+import { Footer } from "@/components/marketing/footer";
 
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col items-center justify-center gap-4 p-8 text-center">
-      <h1 className="font-heading text-4xl font-bold text-brand-blue">
-        {business.shortName}
-      </h1>
-      <p className="text-lg">{business.tagline}</p>
-      <p className="max-w-md text-sm text-neutral-600">
-        The public site is being built in Milestone 2. For now, this is just
-        the project foundation.
-      </p>
-      <Link
-        href="/login"
-        className="mt-4 rounded-full bg-brand-blue px-6 py-3 font-semibold text-white"
-      >
-        Admin login
-      </Link>
+    <main>
+      <Hero />
+      <WhyGsd />
+      <WhoItsFor />
+      <Packages />
+      <PackageRecommender />
+      <HowItWorks />
+      <Requirements />
+      <Instructors />
+      <Testimonials />
+      <Policies />
+      <Faq />
+      <Footer />
     </main>
   );
 }
