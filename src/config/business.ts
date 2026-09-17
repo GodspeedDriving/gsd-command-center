@@ -57,12 +57,12 @@ export const business = {
   },
 
   audiences: [
-    "Nervous beginners",
-    "Late learners",
-    "Students burned by aggressive instructors",
-    "Parents enrolling themselves or their children",
     "Busy professionals",
+    "Nervous beginners",
+    "Students who didn't learn well the first time",
+    "Parents enrolling their children",
     "People returning to driving after a long break",
+    "Drivers who didn't get the right foundation",
   ],
 
   legal: {
