@@ -25,7 +25,7 @@ export function ButtonLink({
     <Link
       href={href}
       className={clsx(
-        "inline-flex items-center justify-center rounded-full px-7 py-3.5 text-base font-semibold transition-colors",
+        "inline-flex items-center justify-center rounded-full px-7 py-3.5 text-center text-base font-semibold transition-colors",
         VARIANT_CLASSES[variant],
         className,
       )}
