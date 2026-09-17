@@ -6,8 +6,6 @@ export interface PublicPackage {
   name: string;
   sessionsCount: number;
   hoursPerSession: number;
-  priceWeekday: number;
-  priceWeekend: number;
   audienceMd: string | null;
   includesMd: string | null;
 }
@@ -35,7 +33,7 @@ export async function getPublicPackages(): Promise<PublicPackage[]> {
   const { data } = await supabase
     .from("packages")
     .select(
-      "code, name, sessions_count, hours_per_session, price_weekday, price_weekend, audience_md, includes_md",
+      "code, name, sessions_count, hours_per_session, audience_md, includes_md",
     )
     .eq("active", true)
     .order("display_order", { ascending: true });
@@ -45,8 +43,6 @@ export async function getPublicPackages(): Promise<PublicPackage[]> {
     name: row.name,
     sessionsCount: row.sessions_count,
     hoursPerSession: row.hours_per_session,
-    priceWeekday: row.price_weekday,
-    priceWeekend: row.price_weekend,
     audienceMd: row.audience_md,
     includesMd: row.includes_md,
   }));

@@ -1,7 +1,8 @@
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button-link";
 import { getPublicPackages } from "@/lib/data/public";
-import { formatPeso, splitIncludes } from "@/lib/format";
+import { splitIncludes } from "@/lib/format";
+import { business } from "@/config/business";
 
 export async function Packages() {
   const packages = await getPublicPackages();
@@ -9,6 +10,12 @@ export async function Packages() {
   if (packages.length === 0) {
     return null;
   }
+
+  const messengerUrl = business.contact.messengerPageHandle.confirmed
+    ? `https://m.me/${business.contact.messengerPageHandle.value}`
+    : business.contact.facebookPageUrl.confirmed
+      ? business.contact.facebookPageUrl.value
+      : null;
 
   return (
     <section id="packages" className="py-16 sm:py-20">
@@ -18,7 +25,7 @@ export async function Packages() {
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-center text-neutral-600">
           Every package pairs you with one dedicated coach for every session.
-          Prices are per package, not per hour.
+          Message us for current pricing.
         </p>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -36,16 +43,6 @@ export async function Packages() {
                   {pkg.sessionsCount}{" "}
                   {pkg.sessionsCount === 1 ? "session" : "sessions"} &middot;{" "}
                   {pkg.hoursPerSession} hrs each
-                </p>
-
-                <div className="mt-4 flex items-baseline gap-2">
-                  <span className="font-heading text-2xl font-bold text-neutral-900">
-                    {formatPeso(pkg.priceWeekday)}
-                  </span>
-                  <span className="text-xs text-neutral-500">weekday</span>
-                </div>
-                <p className="text-sm text-neutral-500">
-                  {formatPeso(pkg.priceWeekend)} weekend
                 </p>
 
                 {pkg.audienceMd && (
@@ -78,12 +75,11 @@ export async function Packages() {
                   </div>
                 )}
 
-                <ButtonLink
-                  href={`/reserve?package=${pkg.code}`}
-                  className="mt-6"
-                >
-                  Reserve this package
-                </ButtonLink>
+                {messengerUrl && (
+                  <ButtonLink href={messengerUrl} className="mt-6">
+                    Message us for pricing
+                  </ButtonLink>
+                )}
               </div>
             );
           })}
