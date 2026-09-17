@@ -28,7 +28,7 @@ export function WhyGsd() {
             >
               <div
                 aria-hidden
-                className="font-heading mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-brand-blue/10 text-lg font-bold text-brand-blue"
+                className="font-heading mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-brand-blue text-lg font-bold text-white"
               >
                 {i + 1}
               </div>
