@@ -46,8 +46,9 @@ export const business = {
   }),
 
   positioning: {
+    tagline: "More than driving lessons. This is driving coaching.",
     betweenText:
-      "GSD is the professional middle ground between big driving schools (technical, one-size-fits-all, rotating instructors) and freelance private instructors (flexible but unstructured).",
+      "With structured sessions, personalized guidance, and purposeful practice, GSD helps you build the skills, habits, and confidence to drive safely on your own.",
     pillars: [
       "One dedicated coach per student for the whole package",
       "Personalized pace, adapted to each student's strengths and weaknesses",

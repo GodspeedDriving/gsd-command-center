@@ -12,6 +12,9 @@ export function WhyGsd() {
           <h2 className="font-heading text-3xl font-bold text-brand-blue sm:text-4xl">
             Why <GsdMark />
           </h2>
+          <p className="mt-3 font-semibold text-neutral-800">
+            {business.positioning.tagline}
+          </p>
           <p className="mt-4 text-neutral-600">
             {business.positioning.betweenText}
           </p>
