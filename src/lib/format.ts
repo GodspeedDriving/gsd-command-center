@@ -48,6 +48,25 @@ function splitTopLevelCommas(text: string): string[] {
   return items.map((s) => s.trim()).filter(Boolean);
 }
 
+/**
+ * Splits a package name like "Package 1: Basic Road Handling" into a label
+ * ("Package 1") and subtitle ("Basic Road Handling") for two-line display.
+ * Names with no colon (e.g. "Ultimate Road Ready") return a null subtitle.
+ */
+export function splitPackageTitle(name: string): {
+  label: string;
+  subtitle: string | null;
+} {
+  const colonIndex = name.indexOf(":");
+  if (colonIndex === -1) {
+    return { label: name, subtitle: null };
+  }
+  return {
+    label: name.slice(0, colonIndex).trim(),
+    subtitle: name.slice(colonIndex + 1).trim(),
+  };
+}
+
 export function formatDate(date: Date | string): string {
   const d = typeof date === "string" ? new Date(date) : date;
   return d.toLocaleDateString("en-US", {

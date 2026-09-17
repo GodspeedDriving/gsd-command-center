@@ -1,7 +1,7 @@
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button-link";
 import { getPublicPackages } from "@/lib/data/public";
-import { splitIncludes } from "@/lib/format";
+import { splitIncludes, splitPackageTitle } from "@/lib/format";
 import { business } from "@/config/business";
 
 export async function Packages() {
@@ -31,13 +31,20 @@ export async function Packages() {
         <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {packages.map((pkg) => {
             const includes = pkg.includesMd ? splitIncludes(pkg.includesMd) : null;
+            const title = splitPackageTitle(pkg.name);
             return (
               <div
                 key={pkg.code}
                 className="flex flex-col rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
               >
                 <h3 className="font-heading text-center text-xl font-bold text-brand-blue">
-                  {pkg.name}
+                  {title.label}
+                  {title.subtitle && (
+                    <>
+                      <br />
+                      {title.subtitle}
+                    </>
+                  )}
                 </h3>
                 <p className="mt-1 text-center text-sm text-neutral-500">
                   {pkg.sessionsCount}{" "}

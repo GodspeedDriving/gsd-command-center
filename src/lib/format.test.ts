@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { formatPeso, splitIncludes } from "./format";
+import { formatPeso, splitIncludes, splitPackageTitle } from "./format";
 
 describe("formatPeso", () => {
   it("formats whole numbers with the peso sign and thousands separators", () => {
@@ -46,5 +46,25 @@ describe("splitIncludes", () => {
       "basic turning",
       "light traffic driving",
     ]);
+  });
+});
+
+describe("splitPackageTitle", () => {
+  it("splits a colon-separated name into label and subtitle", () => {
+    expect(splitPackageTitle("Package 1: Basic Road Handling")).toEqual({
+      label: "Package 1",
+      subtitle: "Basic Road Handling",
+    });
+    expect(splitPackageTitle("VIP Experience: All-In Mastery")).toEqual({
+      label: "VIP Experience",
+      subtitle: "All-In Mastery",
+    });
+  });
+
+  it("returns a null subtitle for names with no colon", () => {
+    expect(splitPackageTitle("Ultimate Road Ready")).toEqual({
+      label: "Ultimate Road Ready",
+      subtitle: null,
+    });
   });
 });
