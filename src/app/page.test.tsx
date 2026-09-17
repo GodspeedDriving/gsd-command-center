@@ -13,11 +13,11 @@ describe("Hero", () => {
     ).toHaveAttribute("href", "/reserve");
   });
 
-  it("does not show a Messenger button until the page handle is confirmed", () => {
+  it("links to the confirmed Facebook page while no Messenger handle is set", () => {
     render(<Hero />);
 
     expect(
-      screen.queryByRole("link", { name: /message us on messenger/i }),
-    ).not.toBeInTheDocument();
+      screen.getByRole("link", { name: /message us on facebook/i }),
+    ).toHaveAttribute("href", business.contact.facebookPageUrl.value);
   });
 });

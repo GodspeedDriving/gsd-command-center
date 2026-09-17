@@ -1,7 +1,7 @@
 import { Container } from "@/components/ui/container";
 import { business } from "@/config/business";
 
-const INSTRUCTORS = [
+const COACHES = [
   {
     unit: business.instructors.unitA,
     transmissionLabel: "Automatic (A/T)",
@@ -12,20 +12,20 @@ const INSTRUCTORS = [
   },
 ];
 
-export function Instructors() {
+export function Coaches() {
   return (
     <section className="py-16 sm:py-20">
       <Container>
         <h2 className="font-heading text-center text-3xl font-bold text-brand-blue sm:text-4xl">
-          Our instructors
+          Our coaches
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-center text-neutral-600">
-          Every student gets one dedicated instructor for their entire
-          package — no rotating teachers, no starting over.
+          Every student gets one dedicated coach for their entire package —
+          no rotating teachers, no starting over.
         </p>
 
         <div className="mx-auto mt-12 grid max-w-2xl gap-6 sm:grid-cols-2">
-          {INSTRUCTORS.map(({ unit, transmissionLabel }) => (
+          {COACHES.map(({ unit, transmissionLabel }) => (
             <div
               key={transmissionLabel}
               className="rounded-2xl border border-neutral-200 bg-white p-6 text-center shadow-sm"

@@ -5,7 +5,9 @@ import { business } from "@/config/business";
 export function Hero() {
   const messengerUrl = business.contact.messengerPageHandle.confirmed
     ? `https://m.me/${business.contact.messengerPageHandle.value}`
-    : null;
+    : business.contact.facebookPageUrl.confirmed
+      ? business.contact.facebookPageUrl.value
+      : null;
 
   return (
     <section className="relative overflow-hidden bg-brand-blue text-white">
@@ -37,13 +39,13 @@ export function Hero() {
               variant="outline"
               className="w-full border-white text-white hover:bg-white hover:text-brand-blue sm:w-auto"
             >
-              Message us on Messenger
+              Message us on Facebook
             </ButtonLink>
           )}
         </div>
         <p className="text-sm text-white/70">
-          Automatic and manual lessons &middot; One dedicated instructor
-          &middot; Only 2 slots a day
+          Automatic and manual lessons &middot; One dedicated coach &middot;
+          Limited slots daily
         </p>
       </Container>
     </section>

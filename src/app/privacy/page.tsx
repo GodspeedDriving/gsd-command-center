@@ -43,7 +43,7 @@ export default function PrivacyPage() {
           <h2>Who can see it</h2>
           <p>
             Your information is visible only to {business.shortName}&apos;s
-            owner and your assigned instructor, to the extent needed to
+            owner and your assigned coach, to the extent needed to
             deliver your lessons. We do not share your data with third
             parties except service providers that help us run this system
             (such as our database and hosting providers), who are bound to

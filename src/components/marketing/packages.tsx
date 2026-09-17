@@ -17,8 +17,8 @@ export async function Packages() {
           Packages
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-center text-neutral-600">
-          Every package pairs you with one dedicated instructor for every
-          session. Prices are per package, not per hour.
+          Every package pairs you with one dedicated coach for every session.
+          Prices are per package, not per hour.
         </p>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">

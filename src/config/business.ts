@@ -23,7 +23,7 @@ export const business = {
   shortName: "GSD",
   tagline: "Confidence starts here.",
   enrollmentHeadline:
-    "Patient Instructors. Real Confidence. Roads You're Ready For.",
+    "Patient Coaches. Real Confidence. Roads You're Ready For.",
 
   location: {
     city: "Quezon City",
@@ -50,7 +50,7 @@ export const business = {
     betweenText:
       "GSD is the professional middle ground between big driving schools (technical, one-size-fits-all, rotating instructors) and freelance private instructors (flexible but unstructured).",
     pillars: [
-      "One dedicated instructor per student for the whole package",
+      "One dedicated coach per student for the whole package",
       "Personalized pace, adapted to each student's strengths and weaknesses",
       "Attitude as well as skill: confident, capable, responsible drivers",
     ],
@@ -72,13 +72,21 @@ export const business = {
     ltoAccredited: false,
     issuesTdcPdc: false,
     internalStandards: ["GSD Approved", "Godspeed-Certified"],
-    footerRegistrationText: unconfirmed(
-      "DTI Registered Business Name (registration number to be added).",
-    ),
+    footerRegistrationText: {
+      value:
+        "DTI Business Name Registration No. 7441384 (valid through September 10, 2030).",
+      confirmed: true,
+    },
     retiredPhrases: ["Wag ka matuto sa mali"],
   },
 
   contact: {
+    // TODO(OWNER): replace with a proper m.me/<username> link once we have
+    // the Page's username (this share-link works but isn't a direct m.me link).
+    facebookPageUrl: {
+      value: "https://www.facebook.com/share/1CWvQDURPi/",
+      confirmed: true,
+    },
     messengerPageHandle: unconfirmed(""), // used to build m.me/<handle>
     phone: unconfirmed(""),
     email: unconfirmed(""),
@@ -90,7 +98,7 @@ export const business = {
   instructors: {
     unitA: {
       transmission: "A/T" as const,
-      displayName: unconfirmed("GSD Instructor (A/T)"),
+      displayName: unconfirmed("GSD Coach (A/T)"),
       yearsExperience: 26,
       vehicleLabel: "Borrowed automatic vehicle",
       vehicleOwned: false,
@@ -99,7 +107,7 @@ export const business = {
     },
     unitM: {
       transmission: "M/T" as const,
-      displayName: unconfirmed("GSD Instructor (M/T)"),
+      displayName: unconfirmed("GSD Coach (M/T)"),
       yearsExperience: 5,
       vehicleLabel: "GSD-owned manual vehicle",
       vehicleOwned: true,
@@ -129,10 +137,9 @@ export const business = {
  */
 export const ownerTodos = [
   "Confirm fonts (Oswald / Barlow) or provide alternatives",
-  "Confirm footer DTI registration wording",
-  "Messenger Page handle (for m.me link) and phone/email/Viber contact details",
+  "Messenger Page username (for a direct m.me link) and phone/email/Viber contact details",
   "Domain name",
-  "Instructor display names, short bios, and photos (Unit A and Unit M)",
+  "Coach display names, short bios, and photos (Unit A and Unit M)",
   "Website language: English only, or English with Taglish",
   "Meeting points or pickup zones in Quezon City, and any pickup fee",
   "Confirm VIP/URR priority booking rule",
@@ -140,7 +147,7 @@ export const ownerTodos = [
   "Teaching days and hours per unit",
   "Payment methods and account details (GCash name/number, bank)",
   "Deposit %, reschedule fees, package validity, refund rule",
-  "Whether instructors/car owner are paid on late cancellations or no-shows",
+  "Whether coaches/car owner are paid on late cancellations or no-shows",
   "Whether permit-less students can do anything besides waitlist",
   "Final FAQ answers and message templates",
 ] as const;

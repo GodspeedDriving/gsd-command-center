@@ -58,7 +58,7 @@ export default async function TermsPage() {
           <h2>Limitation of liability</h2>
           <p>
             Driving lessons carry inherent risk. Students and, where
-            applicable, their parent or guardian, agree to follow instructor
+            applicable, their parent or guardian, agree to follow coach
             guidance and applicable traffic laws at all times. GSD is not
             liable for outcomes outside our reasonable control, including
             LTO exam results, weather-related disruptions, or third-party
