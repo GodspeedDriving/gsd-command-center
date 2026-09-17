@@ -13,7 +13,7 @@ function ExpiredLinkNotice() {
   if (!linkExpired) return null;
 
   return (
-    <p className="mb-4 rounded-lg bg-brand-yellow/20 px-3 py-2 text-sm text-neutral-800">
+    <p className="mb-4 rounded-lg bg-amber-50 px-3 py-2 text-sm text-neutral-800">
       That link already expired or was already used. Please request a new
       one below.
     </p>

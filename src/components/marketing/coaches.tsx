@@ -40,9 +40,6 @@ export function Coaches() {
                 {unit.displayName.value}
               </p>
               <p className="text-sm text-neutral-500">{transmissionLabel}</p>
-              <p className="mt-3 text-sm text-neutral-600">
-                {unit.yearsExperience} years of driving experience
-              </p>
             </div>
           ))}
         </div>

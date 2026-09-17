@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
+import { BrandStripes } from "@/components/marketing/brand-stripes";
 import { business } from "@/config/business";
 
 export function Footer() {
@@ -10,8 +11,9 @@ export function Footer() {
   ].filter(Boolean) as string[];
 
   return (
-    <footer className="border-t border-neutral-200 bg-white py-10">
-      <Container className="flex flex-col items-center gap-4 text-center">
+    <footer className="border-t border-neutral-200 bg-white">
+      <BrandStripes />
+      <Container className="flex flex-col items-center gap-4 py-10 text-center">
         <p className="font-heading text-lg font-bold text-brand-blue">
           {business.shortName}
         </p>

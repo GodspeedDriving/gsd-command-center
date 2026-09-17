@@ -1,10 +1,11 @@
 import { Container } from "@/components/ui/container";
+import { business } from "@/config/business";
 
 export function Requirements() {
   return (
     <section className="py-16 sm:py-20">
       <Container className="max-w-3xl">
-        <div className="rounded-2xl border-2 border-brand-yellow bg-brand-yellow/10 p-8">
+        <div className="rounded-2xl border-2 border-brand-blue/30 bg-brand-blue/5 p-8">
           <h2 className="font-heading text-2xl font-bold text-neutral-900">
             Before your first session
           </h2>
@@ -20,6 +21,13 @@ export function Requirements() {
             provider — we&apos;re here to build your confidence and skill
             behind the wheel.
           </p>
+          {business.meetingPoints.confirmed &&
+            business.meetingPoints.value.length > 0 && (
+              <p className="mt-4 text-sm text-neutral-700">
+                <strong>Where we meet:</strong>{" "}
+                {business.meetingPoints.value.join(" / ")}
+              </p>
+            )}
         </div>
       </Container>
     </section>

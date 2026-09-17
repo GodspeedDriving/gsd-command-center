@@ -1,9 +1,11 @@
 import { Container } from "@/components/ui/container";
+import { BrandWatermark } from "@/components/marketing/brand-watermark";
 import { business } from "@/config/business";
 
 export function WhyGsd() {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="relative overflow-hidden py-16 sm:py-20">
+      <BrandWatermark side="right" />
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-heading text-3xl font-bold text-brand-blue sm:text-4xl">

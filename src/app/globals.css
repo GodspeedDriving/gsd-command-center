@@ -5,7 +5,6 @@
   --foreground: #1a1a1a;
   --color-brand-blue: #1a4fa0;
   --color-brand-red: #d0191b;
-  --color-brand-yellow: #f7c948;
 }
 
 @theme inline {
@@ -13,12 +12,13 @@
   --color-foreground: var(--foreground);
   --color-brand-blue: var(--color-brand-blue);
   --color-brand-red: var(--color-brand-red);
-  --color-brand-yellow: var(--color-brand-yellow);
   --font-heading: var(--font-oswald);
   --font-sans: var(--font-barlow);
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  /* Subtle grain texture so the off-white background doesn't read as flat. */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   color: var(--foreground);
 }

@@ -5,7 +5,7 @@ type Variant = "primary" | "secondary" | "outline";
 
 const VARIANT_CLASSES: Record<Variant, string> = {
   primary: "bg-brand-blue text-white hover:bg-brand-blue/90",
-  secondary: "bg-brand-yellow text-neutral-900 hover:bg-brand-yellow/90",
+  secondary: "bg-brand-red text-white hover:bg-brand-red/90",
   outline:
     "border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white",
 };

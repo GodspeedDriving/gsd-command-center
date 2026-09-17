@@ -19,7 +19,6 @@ describe("business config", () => {
   it("uses valid hex codes for the brand colors", () => {
     expect(business.colors.blue).toMatch(HEX_COLOR);
     expect(business.colors.red).toMatch(HEX_COLOR);
-    expect(business.colors.yellow).toMatch(HEX_COLOR);
     expect(business.colors.background).toMatch(HEX_COLOR);
   });
 

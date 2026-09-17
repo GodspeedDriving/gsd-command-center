@@ -20,8 +20,8 @@ export function Hero() {
         }}
       />
       <Container className="relative flex flex-col items-center gap-6 py-16 text-center sm:py-24">
-        <span className="rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium tracking-wide text-brand-yellow">
-          {business.location.city} &middot; Automatic &amp; Manual
+        <span className="rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium tracking-wide text-white">
+          {business.location.city} &middot; 4-Wheel Vehicles Only
         </span>
         <h1 className="font-heading max-w-3xl text-5xl leading-[1.05] font-bold tracking-tight sm:text-6xl">
           {business.tagline}

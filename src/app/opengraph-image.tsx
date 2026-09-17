@@ -34,7 +34,7 @@ export default async function OpengraphImage() {
             marginTop: 24,
             fontSize: 44,
             fontWeight: 600,
-            color: business.colors.yellow,
+            color: "white",
           }}
         >
           {business.tagline}

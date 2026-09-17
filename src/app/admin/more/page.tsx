@@ -22,11 +22,11 @@ export default async function MorePage() {
           {ownerTodos.map((todo) => (
             <li
               key={todo}
-              className="flex items-start gap-2 rounded-lg border border-brand-yellow/60 bg-brand-yellow/10 px-3 py-2 text-sm"
+              className="flex items-start gap-2 rounded-lg border border-amber-400/60 bg-amber-50 px-3 py-2 text-sm"
             >
               <span
                 aria-hidden
-                className="mt-0.5 rounded bg-brand-yellow px-1.5 py-0.5 text-[10px] font-bold text-neutral-900"
+                className="mt-0.5 rounded bg-amber-400 px-1.5 py-0.5 text-[10px] font-bold text-neutral-900"
               >
                 TODO
               </span>

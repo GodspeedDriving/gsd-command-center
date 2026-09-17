@@ -37,7 +37,6 @@ export const business = {
   colors: {
     blue: "#1A4FA0",
     red: "#D0191B",
-    yellow: "#F7C948",
     background: "#FDFBF5",
   },
 
@@ -73,8 +72,7 @@ export const business = {
     issuesTdcPdc: false,
     internalStandards: ["GSD Approved", "Godspeed-Certified"],
     footerRegistrationText: {
-      value:
-        "DTI Business Name Registration No. 7441384 (valid through September 10, 2030).",
+      value: "DTI Business Name Registration No. 7441384.",
       confirmed: true,
     },
     retiredPhrases: ["Wag ka matuto sa mali"],
@@ -88,8 +86,8 @@ export const business = {
       confirmed: true,
     },
     messengerPageHandle: unconfirmed(""), // used to build m.me/<handle>
-    phone: unconfirmed(""),
-    email: unconfirmed(""),
+    phone: { value: "0906 433 3182", confirmed: true },
+    email: { value: "godspeeddrivingph@gmail.com", confirmed: true },
     viber: unconfirmed(""),
   },
 
@@ -118,7 +116,12 @@ export const business = {
 
   language: unconfirmed<"english" | "english-taglish">("english"),
 
-  meetingPoints: unconfirmed<string[]>([]),
+  meetingPoints: {
+    value: [
+      "Godspeed Driving, Grass Residences, Misamis Street, Bago Bantay, Quezon City 1105",
+    ],
+    confirmed: true,
+  },
 
   waitlistPriorityRule: unconfirmed(
     "VIP and URR students can see and book slots 3 days before other students.",
@@ -137,11 +140,11 @@ export const business = {
  */
 export const ownerTodos = [
   "Confirm fonts (Oswald / Barlow) or provide alternatives",
-  "Messenger Page username (for a direct m.me link) and phone/email/Viber contact details",
+  "Messenger Page username (for a direct m.me link) and Viber number",
   "Domain name",
   "Coach display names, short bios, and photos (Unit A and Unit M)",
   "Website language: English only, or English with Taglish",
-  "Meeting points or pickup zones in Quezon City, and any pickup fee",
+  "Any pickup fee for meeting points outside Bago Bantay",
   "Confirm VIP/URR priority booking rule",
   "Package tier display order and mixed weekday/weekend rule",
   "Teaching days and hours per unit",
