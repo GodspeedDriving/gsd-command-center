@@ -23,7 +23,7 @@ export const business = {
   shortName: "GSD",
   tagline: "Confidence starts here.",
   enrollmentHeadline:
-    "Patient Coaches. Real Confidence. Roads You're Ready For.",
+    "From nervous to ready. From anxious to confident.",
 
   location: {
     city: "Quezon City",
