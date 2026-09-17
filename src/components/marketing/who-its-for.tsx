@@ -1,4 +1,5 @@
 import { Container } from "@/components/ui/container";
+import { GsdMark } from "@/components/marketing/gsd-mark";
 import { business } from "@/config/business";
 
 export function WhoItsFor() {
@@ -6,7 +7,7 @@ export function WhoItsFor() {
     <section className="bg-brand-blue/5 py-16 sm:py-20">
       <Container>
         <h2 className="font-heading text-center text-3xl font-bold text-brand-blue sm:text-4xl">
-          Who GSD is for
+          Who <GsdMark /> is for
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-center text-neutral-600">
           If any of these sound like you, you&apos;re exactly who we built

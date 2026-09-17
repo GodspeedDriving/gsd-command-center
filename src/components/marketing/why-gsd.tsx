@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/container";
 import { BrandWatermark } from "@/components/marketing/brand-watermark";
+import { GsdMark } from "@/components/marketing/gsd-mark";
 import { business } from "@/config/business";
 
 export function WhyGsd() {
@@ -9,7 +10,7 @@ export function WhyGsd() {
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-heading text-3xl font-bold text-brand-blue sm:text-4xl">
-            Why GSD
+            Why <GsdMark />
           </h2>
           <p className="mt-4 text-neutral-600">
             {business.positioning.betweenText}
